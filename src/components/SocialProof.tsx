@@ -1,0 +1,130 @@
+"use client";
+
+import { useState, useRef, MouseEvent, TouchEvent } from "react";
+import { Star, MapPin, Quote } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function SocialProof() {
+  return (
+    <section id="reviews" className="py-20 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-900 mb-4">Trusted by Galway Homeowners</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Don&apos;t just take our word for it. See what your neighbours have to say about our service.
+          </p>
+        </div>
+
+        {/* Reviews Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          {[
+            { name: "Sarah M.", area: "Galway City", text: "Tom was brilliant. Showed up exactly when he said he would, fixed the leak under the sink quickly, and left the place spotless. Honest pricing too." },
+            { name: "Declan O.", area: "Oranmore", text: "Got our old boiler swapped out for a new efficient model. The lads were professional, polite, and explained everything clearly. Highly recommend!" },
+            { name: "Fiona C.", area: "Knocknacarra", text: "Had an emergency burst pipe on a Sunday. They guided me on how to turn off the water over the phone and were out first thing Monday morning." },
+            { name: "Mark K.", area: "Claregalway", text: "Full bathroom renovation. The attention to detail was fantastic and they managed all the trades perfectly. No stress at all." },
+          ].map((review, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 relative"
+            >
+              <Quote className="absolute top-4 right-4 w-8 h-8 text-slate-100" />
+              <div className="flex gap-1 text-yellow-400 mb-4">
+                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
+              </div>
+              <p className="text-slate-600 mb-6 italic leading-relaxed">&quot;{review.text}&quot;</p>
+              <div className="flex items-center justify-between border-t border-slate-50 pt-4 mt-auto">
+                <span className="font-bold text-brand-900">{review.name}</span>
+                <span className="flex items-center gap-1 text-xs text-slate-500 font-medium">
+                  <MapPin className="w-3 h-3 text-accent-cyan" /> {review.area}
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Before/After Showcase */}
+        <div className="text-center mb-10">
+          <h3 className="text-2xl md:text-3xl font-bold text-brand-900 mb-2">Recent Transformations</h3>
+          <p className="text-slate-600">Drag the slider to see the difference.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <ImageSlider 
+            before="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" 
+            after="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=2069&auto=format&fit=crop"
+            title="Bathroom Renovation in Salthill"
+          />
+          <ImageSlider 
+            before="https://images.unsplash.com/photo-1621293954908-907159247fc8?q=80&w=2070&auto=format&fit=crop" 
+            after="https://images.unsplash.com/photo-1616422285623-14bf929f170c?q=80&w=2072&auto=format&fit=crop"
+            title="Modern Boiler Swap in Tuam"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ImageSlider({ before, after, title }: { before: string, after: string, title: string }) {
+  const [sliderPosition, setSliderPosition] = useState(50);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMove = (clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    const percent = Math.max(0, Math.min((x / rect.width) * 100, 100));
+    setSliderPosition(percent);
+  };
+
+  const onMouseMove = (e: MouseEvent) => handleMove(e.clientX);
+  const onTouchMove = (e: TouchEvent) => handleMove(e.touches[0].clientX);
+
+  return (
+    <div>
+      <h4 className="font-bold text-brand-900 mb-4">{title}</h4>
+      <div 
+        ref={containerRef}
+        className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-ew-resize select-none bg-slate-200"
+        onMouseMove={onMouseMove}
+        onTouchMove={onTouchMove}
+      >
+        {/* After Image (Background) */}
+        <img src={after} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+        
+        {/* Before Image (Foreground overlay) */}
+        <img 
+          src={before} 
+          alt="Before" 
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
+          style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+        />
+
+        {/* Slider Handle */}
+        <div 
+          className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize pointer-events-none"
+          style={{ left: `calc(${sliderPosition}% - 2px)` }}
+        >
+
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center pointer-events-none">
+            <div className="flex gap-1">
+              <div className="w-1 h-3 bg-slate-300 rounded-full"></div>
+              <div className="w-1 h-3 bg-slate-300 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full pointer-events-none">
+          BEFORE
+        </div>
+        <div className="absolute top-4 right-4 bg-accent-cyan/80 backdrop-blur-sm text-brand-900 text-xs font-bold px-3 py-1 rounded-full pointer-events-none">
+          AFTER
+        </div>
+      </div>
+    </div>
+  );
+}
