@@ -20,9 +20,9 @@ export default function SocialProof() {
 
         <div className="grid md:grid-cols-3 gap-6 mb-20">
           {[
-            { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&q=80&w=800", title: "Luxury Bathroom Fit-Out", tag: "Bathroom", area: "Salthill" },
-            { img: "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=800", title: "Worcester Boiler Upgrade", tag: "Heating", area: "Knocknacarra" },
-            { img: "https://images.unsplash.com/photo-1621293954908-907159247fc8?auto=format&fit=crop&q=80&w=800", title: "Underfloor Heating Manifold", tag: "Plumbing", area: "Oranmore" },
+            { img: "/portfolio_bathroom.jpg", title: "Luxury Bathroom Fit-Out", tag: "Bathroom", area: "Galway City" },
+            { img: "/portfolio_boiler.jpg", title: "Worcester Boiler Upgrade", tag: "Heating", area: "County Galway" },
+            { img: "/portfolio_underfloor.jpg", title: "Underfloor Heating Manifold", tag: "Plumbing", area: "Galway City" },
           ].map((project, idx) => (
             <motion.div 
               key={idx}
@@ -94,16 +94,16 @@ export default function SocialProof() {
           <p className="text-slate-600">Drag the slider to see the difference.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
           <ImageSlider 
-            before="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000" 
-            after="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&q=80&w=1000"
-            title="Bathroom Renovation in Salthill"
+            before="/bathroom_before.jpg" 
+            after="/bathroom_after.jpg"
+            title="Recent Bathroom Renovation"
           />
           <ImageSlider 
-            before="https://images.unsplash.com/photo-1621293954908-907159247fc8?auto=format&fit=crop&q=80&w=1000" 
-            after="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=1000"
-            title="Modern Boiler Swap in Tuam"
+            before="/boiler_before.jpg" 
+            after="/boiler_after.jpg"
+            title="Recent Boiler Replacement"
           />
         </div>
       </div>

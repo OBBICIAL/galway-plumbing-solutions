@@ -13,7 +13,7 @@ export default function TopBar() {
         <div className="flex items-center gap-2">
           <Info className="w-4 h-4 text-accent-cyan" />
           <span>
-            Serving Galway City & County <span className="hidden md:inline">| Master Craftsmen Certified | Transparent Call-Out: €120 (incl. 1st hour)</span>
+            Serving Galway City & County <span className="hidden md:inline">| Master Craftsmen Certified | Transparent Call-Out: €140 (incl. 1st hour)</span>
           </span>
         </div>
         <div className="flex items-center gap-4">

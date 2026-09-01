@@ -19,7 +19,7 @@ export default function PricingBanner() {
                   <Clock className="w-5 h-5 text-accent-cyan" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold">Standard Call-Out: €120</h4>
+                  <h4 className="text-lg font-semibold">Standard Call-Out: €140</h4>
                   <p className="text-slate-400">Includes the first full hour of on-site diagnostic & repair work (plus VAT & materials).</p>
                 </div>
               </div>

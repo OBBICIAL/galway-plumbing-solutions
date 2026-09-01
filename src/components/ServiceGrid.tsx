@@ -14,20 +14,20 @@ export default function ServiceGrid() {
 
   const services = {
     plumbing: [
-      { title: "Burst Pipes & Leak Detection", icon: Droplets, desc: "Fast response to minimize water damage.", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800" },
-      { title: "Shower Replacements", icon: Droplets, desc: "Power and electric showers supplied and fitted.", img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&q=80&w=800" },
-      { title: "Booster Pumps", icon: Droplets, desc: "Increase water pressure throughout your home.", img: "https://images.unsplash.com/photo-1621293954908-907159247fc8?auto=format&fit=crop&q=80&w=800" },
-      { title: "Tap Repairs & Upgrades", icon: Droplets, desc: "Fix dripping taps or install modern mixers.", img: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&q=80&w=800" },
-      { title: "Kitchen Plumbing", icon: Droplets, desc: "Appliance installation and sink plumbing.", img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800" },
-      { title: "Blocked Drains", icon: Droplets, desc: "Rapid clearing of interior and exterior blockages.", img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" },
+      { title: "Burst Pipes & Leak Detection", icon: Droplets, desc: "Fast response to minimize water damage.", img: "/service_leak.jpg" },
+      { title: "Shower Replacements", icon: Droplets, desc: "Power and electric showers supplied and fitted.", img: "/service_shower.jpg" },
+      { title: "Booster Pumps", icon: Droplets, desc: "Increase water pressure throughout your home.", img: "/service_pump.jpg" },
+      { title: "Tap Repairs & Upgrades", icon: Droplets, desc: "Fix dripping taps or install modern mixers.", img: "/service_tap.jpg" },
+      { title: "Kitchen Plumbing", icon: Droplets, desc: "Appliance installation and sink plumbing.", img: "/service_kitchen.jpg" },
+      { title: "Blocked Drains", icon: Droplets, desc: "Rapid clearing of interior and exterior blockages.", img: "/service_drain.jpg" },
     ],
     heating: [
-      { title: "Oil Boiler Servicing", icon: Flame, desc: "Annual diagnostics, tuning, and repairs.", img: "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=800" },
-      { title: "Heat Pump Maintenance", icon: Wind, desc: "Air-to-Water & Geothermal system servicing.", img: "https://images.unsplash.com/photo-1616422285623-14bf929f170c?auto=format&fit=crop&q=80&w=800" },
-      { title: "Underfloor Heating", icon: Flame, desc: "Balancing, manifold repairs, and flushing.", img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" },
-      { title: "Power Flushing", icon: Droplets, desc: "Clean your heating system for maximum efficiency.", img: "https://images.unsplash.com/photo-1584622781867-1baa58e9915f?auto=format&fit=crop&q=80&w=800" },
-      { title: "Radiator Replacements", icon: Flame, desc: "Upgrade to high-output modern radiators.", img: "https://images.unsplash.com/photo-1585704032644-245eddbbfaf2?auto=format&fit=crop&q=80&w=800" },
-      { title: "Solid Fuel Stoves", icon: Flame, desc: "Safe installation and plumbing connection.", img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" },
+      { title: "Oil Boiler Servicing", icon: Flame, desc: "Annual diagnostics, tuning, and repairs.", img: "/portfolio_boiler.jpg" },
+      { title: "Heat Pump Maintenance", icon: Wind, desc: "Air-to-Water & Geothermal system servicing.", img: "/boiler_after.jpg" },
+      { title: "Underfloor Heating", icon: Flame, desc: "Balancing, manifold repairs, and flushing.", img: "/portfolio_underfloor.jpg" },
+      { title: "Power Flushing", icon: Droplets, desc: "Clean your heating system for maximum efficiency.", img: "/service_pump.jpg" },
+      { title: "Radiator Replacements", icon: Flame, desc: "Upgrade to high-output modern radiators.", img: "/bathroom_after.jpg" },
+      { title: "Solid Fuel Stoves", icon: Flame, desc: "Safe installation and plumbing connection.", img: "/boiler_before.jpg" },
     ]
   };
 
