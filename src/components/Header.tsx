@@ -2,6 +2,7 @@
 
 import { Phone, Droplet, Wrench } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const scrollToBooking = () => {
@@ -11,15 +12,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 w-full bg-white border-b border-slate-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-brand-900 p-2 rounded-lg flex items-center justify-center relative overflow-hidden group-hover:bg-brand-800 transition-colors">
-            <Droplet className="w-5 h-5 text-accent-cyan" />
-            <Wrench className="w-4 h-4 text-accent-blue absolute -bottom-1 -right-1" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-bold text-brand-900 leading-none">Galway Plumbing</span>
-            <span className="text-sm font-medium text-slate-500 leading-none mt-1">Solutions</span>
-          </div>
+        <Link href="/" className="flex items-center group py-2">
+          <Image 
+            src="/logo.jpg" 
+            alt="Galway Plumbing Solutions" 
+            width={200} 
+            height={80} 
+            className="h-14 w-auto object-contain mix-blend-multiply"
+            priority
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8 font-medium text-slate-600">
