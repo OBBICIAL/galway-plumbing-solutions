@@ -1,14 +1,54 @@
 "use client";
 
 import { useState, useRef, MouseEvent, TouchEvent } from "react";
-import { Star, MapPin, Quote } from "lucide-react";
+import { Star, MapPin, Quote, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
+import ImageWithFallback from "./ImageWithFallback";
 
 export default function SocialProof() {
   return (
     <section id="reviews" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
+        
+        {/* Our Work Gallery */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-900 mb-4">Our Recent Work</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Browse some of our latest projects across Galway, from full bathroom refits to high-efficiency boiler installations.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-20">
+          {[
+            { img: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&q=80&w=800", title: "Luxury Bathroom Fit-Out", tag: "Bathroom", area: "Salthill" },
+            { img: "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=800", title: "Worcester Boiler Upgrade", tag: "Heating", area: "Knocknacarra" },
+            { img: "https://images.unsplash.com/photo-1621293954908-907159247fc8?auto=format&fit=crop&q=80&w=800", title: "Underfloor Heating Manifold", tag: "Plumbing", area: "Oranmore" },
+          ].map((project, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 group cursor-pointer"
+            >
+              <div className="relative aspect-video overflow-hidden bg-slate-100">
+                <ImageWithFallback src={project.img} alt={project.title} fill className="group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute top-4 right-4 bg-brand-900/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full">
+                  {project.tag}
+                </div>
+              </div>
+              <div className="p-5">
+                <h4 className="font-bold text-brand-900 text-lg mb-1 group-hover:text-accent-blue transition-colors">{project.title}</h4>
+                <div className="flex items-center gap-1 text-sm text-slate-500">
+                  <MapPin className="w-3.5 h-3.5 text-accent-cyan" /> {project.area}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="text-center mb-16 mt-24">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-900 mb-4">Trusted by Galway Homeowners</h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Don&apos;t just take our word for it. See what your neighbours have to say about our service.
@@ -16,7 +56,7 @@ export default function SocialProof() {
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
           {[
             { name: "Sarah M.", area: "Galway City", text: "Tom was brilliant. Showed up exactly when he said he would, fixed the leak under the sink quickly, and left the place spotless. Honest pricing too." },
             { name: "Declan O.", area: "Oranmore", text: "Got our old boiler swapped out for a new efficient model. The lads were professional, polite, and explained everything clearly. Highly recommend!" },
@@ -25,19 +65,21 @@ export default function SocialProof() {
           ].map((review, idx) => (
             <motion.div 
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 relative"
+              className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 relative flex flex-col h-full"
             >
               <Quote className="absolute top-4 right-4 w-8 h-8 text-slate-100" />
               <div className="flex gap-1 text-yellow-400 mb-4">
                 {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
               </div>
-              <p className="text-slate-600 mb-6 italic leading-relaxed">&quot;{review.text}&quot;</p>
+              <p className="text-slate-600 mb-6 italic leading-relaxed flex-grow">&quot;{review.text}&quot;</p>
               <div className="flex items-center justify-between border-t border-slate-50 pt-4 mt-auto">
-                <span className="font-bold text-brand-900">{review.name}</span>
+                <span className="font-bold text-brand-900 flex items-center gap-2">
+                  {review.name} <CheckCircle2 className="w-4 h-4 text-green-500" />
+                </span>
                 <span className="flex items-center gap-1 text-xs text-slate-500 font-medium">
                   <MapPin className="w-3 h-3 text-accent-cyan" /> {review.area}
                 </span>
@@ -48,19 +90,19 @@ export default function SocialProof() {
 
         {/* Before/After Showcase */}
         <div className="text-center mb-10">
-          <h3 className="text-2xl md:text-3xl font-bold text-brand-900 mb-2">Recent Transformations</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-brand-900 mb-2">Transformations</h3>
           <p className="text-slate-600">Drag the slider to see the difference.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           <ImageSlider 
-            before="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" 
-            after="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=2069&auto=format&fit=crop"
+            before="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000" 
+            after="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&q=80&w=1000"
             title="Bathroom Renovation in Salthill"
           />
           <ImageSlider 
-            before="https://images.unsplash.com/photo-1621293954908-907159247fc8?q=80&w=2070&auto=format&fit=crop" 
-            after="https://images.unsplash.com/photo-1616422285623-14bf929f170c?q=80&w=2072&auto=format&fit=crop"
+            before="https://images.unsplash.com/photo-1621293954908-907159247fc8?auto=format&fit=crop&q=80&w=1000" 
+            after="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=1000"
             title="Modern Boiler Swap in Tuam"
           />
         </div>
@@ -94,23 +136,22 @@ function ImageSlider({ before, after, title }: { before: string, after: string, 
         onTouchMove={onTouchMove}
       >
         {/* After Image (Background) */}
-        <img src={after} alt="After" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
+        <ImageWithFallback src={after} alt="After" fill className="pointer-events-none" />
         
         {/* Before Image (Foreground overlay) */}
-        <img 
-          src={before} 
-          alt="Before" 
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none" 
+        <div 
+          className="absolute inset-0 pointer-events-none"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
-        />
+        >
+          <ImageWithFallback src={before} alt="Before" fill />
+        </div>
 
         {/* Slider Handle */}
         <div 
-          className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize pointer-events-none"
+          className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize pointer-events-none shadow-lg z-20"
           style={{ left: `calc(${sliderPosition}% - 2px)` }}
         >
-
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-[0_0_10px_rgba(0,0,0,0.3)] flex items-center justify-center pointer-events-none">
             <div className="flex gap-1">
               <div className="w-1 h-3 bg-slate-300 rounded-full"></div>
               <div className="w-1 h-3 bg-slate-300 rounded-full"></div>
@@ -118,10 +159,10 @@ function ImageSlider({ before, after, title }: { before: string, after: string, 
           </div>
         </div>
 
-        <div className="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full pointer-events-none">
+        <div className="absolute top-4 left-4 bg-brand-900/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full pointer-events-none z-30">
           BEFORE
         </div>
-        <div className="absolute top-4 right-4 bg-accent-cyan/80 backdrop-blur-sm text-brand-900 text-xs font-bold px-3 py-1 rounded-full pointer-events-none">
+        <div className="absolute top-4 right-4 bg-accent-cyan/80 backdrop-blur-sm text-brand-900 text-xs font-bold px-3 py-1 rounded-full pointer-events-none z-30">
           AFTER
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import ImageWithFallback from "./ImageWithFallback";
 
 export default function Footer() {
   return (
@@ -53,10 +54,10 @@ export default function Footer() {
           <div className="bg-slate-800 rounded-xl overflow-hidden aspect-video relative border border-white/10">
             {/* Map placeholder */}
             <div className="absolute inset-0 flex items-center justify-center opacity-50">
-              <img 
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop" 
+              <ImageWithFallback 
+                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=2074" 
                 alt="Map of Galway" 
-                className="w-full h-full object-cover"
+                fill
               />
             </div>
             <div className="absolute inset-0 bg-brand-900/40"></div>
