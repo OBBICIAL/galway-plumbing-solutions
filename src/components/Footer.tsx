@@ -64,7 +64,7 @@ export default function Footer() {
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="text-center">
                 <MapPin className="w-8 h-8 text-accent-orange mx-auto mb-2 drop-shadow-md" />
-                <span className="font-bold text-white drop-shadow-md bg-brand-900/80 px-3 py-1 rounded-full text-sm">Galway Base</span>
+                <span className="font-bold text-white drop-shadow-md bg-brand-900/80 px-3 py-1 rounded-full text-sm">Roscam, Galway Base</span>
               </div>
             </div>
           </div>

@@ -59,6 +59,18 @@ export default function ServiceGrid() {
             Heating & Renewables
           </button>
         </div>
+        
+        {activeTab === "heating" && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            className="text-center mb-8 bg-orange-50 border border-orange-100 rounded-xl p-4 max-w-2xl mx-auto"
+          >
+            <p className="text-brand-900 font-medium">
+              <span className="font-bold">Note:</span> We do not service or repair Gas Boilers. We cover oil, air-to-water, geothermal, and all other heating systems.
+            </p>
+          </motion.div>
+        )}
 
         <AnimatePresence mode="wait">
           <motion.div 

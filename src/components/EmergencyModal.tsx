@@ -31,7 +31,7 @@ export default function EmergencyModal() {
           </div>
           
           <p className="text-slate-600 mb-8 text-lg">
-            If you have a major leak outside our operating hours (7am – 7pm), follow these steps immediately to minimize water damage.
+            If you have a major leak outside our operating hours (7 am to 5 pm, Monday to Friday), follow these steps immediately to minimize water damage.
           </p>
           
           <div className="space-y-4">
@@ -69,7 +69,7 @@ export default function EmergencyModal() {
           <div className="mt-8 bg-blue-50 border border-blue-100 rounded-xl p-6 text-center">
             <Droplet className="w-8 h-8 text-accent-blue mx-auto mb-2" />
             <p className="font-medium text-brand-900">System secure?</p>
-            <p className="text-slate-600 text-sm mt-1 mb-4">Leave us a message and we&apos;ll prioritize your call at 7am.</p>
+            <p className="text-slate-600 text-sm mt-1 mb-4">Leave us a message and we&apos;ll prioritize your call first thing in the morning.</p>
             <button 
               onClick={() => {
                 setIsOpen(false);
