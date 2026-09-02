@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     siteName: "Galway Plumbing Solutions",
     images: [
       {
-        url: "/logo.jpg",
+        url: "/hero_bg.jpg",
         width: 1200,
         height: 630,
-        alt: "Galway Plumbing Solutions Logo",
+        alt: "Galway Plumbing Solutions - Reliable Plumbing & Heating",
       }
     ],
     locale: "en_IE",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Galway Plumbing Solutions",
     description: "Premier plumbing and heating contractor serving Galway City & County since 2005.",
-    images: ["/logo.jpg"],
+    images: ["/hero_bg.jpg"],
   }
 };
 
