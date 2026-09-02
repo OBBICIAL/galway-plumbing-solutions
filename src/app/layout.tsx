@@ -8,6 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://galway-plumbing-solutions.vercel.app"),
   title: "Galway Plumbing Solutions | Reliable Plumbing & Heating",
   description: "Premier plumbing and heating contractor serving Galway City & County since 2005. Emergency call-outs, boiler servicing, and full bathroom refits.",
   openGraph: {
