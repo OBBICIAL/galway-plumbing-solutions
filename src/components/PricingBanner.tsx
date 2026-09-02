@@ -1,64 +1,80 @@
-import { ShieldAlert, Euro, Clock, ThumbsUp } from "lucide-react";
+import { ShieldAlert, Euro, Clock, ThumbsUp, CheckCircle2 } from "lucide-react";
 
 export default function PricingBanner() {
   return (
-    <section id="pricing" className="py-16 bg-brand-900 text-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 flex items-center gap-3">
-              <Euro className="w-8 h-8 text-accent-cyan" />
-              Transparent Pricing
-            </h2>
-            <p className="text-xl text-slate-300 mb-6 leading-relaxed">
-              We believe in honest, upfront pricing. No hidden fees, no surprise callout traps. Just reliable service from local experts.
-            </p>
-            <div className="flex flex-col gap-4">
+    <section id="pricing" className="py-20 bg-slate-100">
+      <div className="max-w-7xl mx-auto px-4">
+        
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-900 mb-4">Honest Pricing, Guaranteed Quality</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            We believe in upfront pricing and exceptional workmanship. No hidden fees, no surprises.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 items-stretch">
+          
+          {/* Pricing Card */}
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200 relative overflow-hidden flex flex-col">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="bg-blue-50 text-accent-blue p-3 rounded-xl">
+                <Euro className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-brand-900">Transparent Pricing</h3>
+            </div>
+            
+            <div className="space-y-6 flex-1">
               <div className="flex items-start gap-4">
-                <div className="bg-white/10 p-2 rounded-lg mt-1">
-                  <Clock className="w-5 h-5 text-accent-cyan" />
+                <div className="bg-slate-50 p-2 rounded-lg mt-1 border border-slate-100">
+                  <Clock className="w-5 h-5 text-accent-blue" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold">Standard Call-Out: €140</h4>
-                  <p className="text-slate-400">Includes the first full hour of on-site diagnostic & repair work (plus VAT & materials).</p>
+                  <h4 className="text-lg font-bold text-brand-900">Standard Call-Out: €140</h4>
+                  <p className="text-slate-600 mt-1">Includes the first full hour of on-site diagnostic & repair work (plus VAT & materials).</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="bg-white/10 p-2 rounded-lg mt-1">
-                  <ThumbsUp className="w-5 h-5 text-accent-cyan" />
+                <div className="bg-slate-50 p-2 rounded-lg mt-1 border border-slate-100">
+                  <ThumbsUp className="w-5 h-5 text-accent-blue" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold">Honest Advice</h4>
-                  <p className="text-slate-400">We don&apos;t upsell. We fix what&apos;s broken and advise on the most cost-effective solutions.</p>
+                  <h4 className="text-lg font-bold text-brand-900">Honest Advice</h4>
+                  <p className="text-slate-600 mt-1">We don't upsell. We fix what's broken and advise on the most cost-effective long-term solutions.</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="bg-white text-brand-900 rounded-2xl p-8 shadow-xl relative overflow-hidden">
+
+          {/* Quality Promise Card */}
+          <div className="bg-brand-900 text-white rounded-2xl p-8 shadow-xl border border-brand-800 relative overflow-hidden flex flex-col">
             <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
-              GUARANTEED QUALITY
+              GUARANTEED
             </div>
             <div className="flex items-center gap-4 mb-6">
-              <div className="bg-green-50 text-green-600 p-3 rounded-xl">
+              <div className="bg-white/10 text-green-400 p-3 rounded-xl">
                 <ShieldAlert className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold">Our Quality Promise</h3>
             </div>
-            <p className="text-slate-600 mb-6">
-              We know it's hard to find a reliable plumber. That's why we built our entire business around trust, punctuality, and workmanship you can count on.
+            <p className="text-slate-300 mb-8 leading-relaxed">
+              We know it's hard to find a reliable tradesman. That's why our entire business is built on trust, punctuality, and workmanship you can count on.
             </p>
-            <ul className="space-y-3 font-medium text-slate-800">
+            <ul className="space-y-4 font-medium mt-auto">
               <li className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" /> 20+ Years Experience & Fully Insured.
+                <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> 
+                <span><strong className="text-white">20+ Years Experience</strong> & Fully Insured.</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" /> RGI & OFTEC Registered Installers.
+                <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> 
+                <span><strong className="text-white">RGI & OFTEC</strong> Registered Installers.</span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" /> We protect your home and clean up after.
+                <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" /> 
+                <span>We protect your home and <strong className="text-white">always clean up after.</strong></span>
               </li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>

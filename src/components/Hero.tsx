@@ -55,7 +55,7 @@ export default function Hero() {
               onClick={scrollToBooking}
               className="bg-white/10 hover:bg-white/20 text-white text-lg font-bold px-8 py-4 rounded-xl backdrop-blur-md border border-white/20 transition-all active:scale-95"
             >
-              Request Fast Quote
+              Request a Free Quote
             </button>
           </div>
 

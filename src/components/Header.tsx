@@ -35,7 +35,7 @@ export default function Header() {
             onClick={scrollToBooking}
             className="text-brand-900 font-semibold border-2 border-brand-900 px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors"
           >
-            Get a Fast Quote
+            Get a Free Quote
           </button>
           <a 
             href="tel:+353851720646" 

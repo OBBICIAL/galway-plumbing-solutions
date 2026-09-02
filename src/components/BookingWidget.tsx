@@ -56,7 +56,7 @@ export default function BookingWidget() {
     <section id="booking-widget" className="py-20 bg-slate-50">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-900 mb-4">Request a Fast Quote</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-900 mb-4">Request a Free Quote</h2>
           <p className="text-lg text-slate-600">Tell us what you need, and we&apos;ll get back to you with an honest estimate.</p>
         </div>
 
