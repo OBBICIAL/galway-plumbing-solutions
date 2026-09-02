@@ -33,18 +33,18 @@ export default function Header() {
         <div className="flex items-center gap-2 md:gap-4 shrink-0">
           <button 
             onClick={scrollToBooking}
-            className="text-brand-900 font-bold border-2 border-brand-900 px-3 py-2 md:px-4 md:py-2.5 rounded-lg hover:bg-slate-50 transition-colors text-xs sm:text-sm md:text-base whitespace-nowrap"
+            className="text-brand-900 font-extrabold border-2 border-brand-900 px-4 py-2.5 md:px-6 md:py-3.5 rounded-xl hover:bg-slate-50 transition-colors text-[13px] sm:text-base md:text-lg whitespace-nowrap"
           >
-            <span className="hidden md:inline">Get a Free Quote</span>
-            <span className="md:hidden">Get Quote</span>
+            <span className="hidden lg:inline">Get a Free Quote</span>
+            <span className="lg:hidden">Get Quote</span>
           </button>
           <a 
             href="tel:+353851720646" 
-            className="bg-accent-orange hover:bg-orange-600 text-white font-bold px-3 py-2 md:px-5 md:py-2.5 rounded-lg flex items-center gap-1.5 md:gap-2 shadow-sm transition-transform active:scale-95 text-xs sm:text-sm md:text-base whitespace-nowrap"
+            className="bg-accent-orange hover:bg-orange-600 text-white font-extrabold px-4 py-2.5 md:px-6 md:py-3.5 rounded-xl flex items-center gap-2 shadow-sm transition-transform active:scale-95 text-[13px] sm:text-base md:text-lg whitespace-nowrap"
           >
-            <Phone className="w-3.5 h-3.5 md:w-5 md:h-5 animate-pulse" />
-            <span className="hidden md:inline">085 172 0646</span>
-            <span className="md:hidden">Call Now</span>
+            <Phone className="w-4 h-4 md:w-6 md:h-6 animate-pulse" />
+            <span className="hidden lg:inline">085 172 0646</span>
+            <span className="lg:hidden">Call Now</span>
           </a>
         </div>
       </div>
