@@ -83,22 +83,22 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden lg:block relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3] bg-slate-800"
+          className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-video md:aspect-[4/3] bg-slate-800 mt-8 lg:mt-0"
         >
           <ImageWithFallback 
-            src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop" 
+            src="/service_drain.jpg" 
             alt="Professional Plumber at Work"
             fill
             priority
           />
-          <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl text-brand-900 font-semibold shadow-lg flex items-center justify-between">
+          <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 bg-white/90 backdrop-blur-md p-3 md:p-4 rounded-xl text-brand-900 font-semibold shadow-lg flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="bg-green-500 rounded-full p-2">
-                <CheckCircle className="w-5 h-5 text-white" />
+              <div className="bg-green-500 rounded-full p-2 shrink-0">
+                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
               <div>
-                <div className="text-sm text-slate-500">Available Today</div>
-                <div className="text-lg">Rapid Response Team Active</div>
+                <div className="text-xs md:text-sm text-slate-500">Available Today</div>
+                <div className="text-sm md:text-lg">Rapid Response Team Active</div>
               </div>
             </div>
           </div>

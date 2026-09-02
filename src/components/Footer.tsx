@@ -52,20 +52,17 @@ export default function Footer() {
         <div>
           <h4 className="text-white text-xl font-bold mb-6">Service Area</h4>
           <div className="bg-slate-800 rounded-xl overflow-hidden aspect-video relative border border-white/10">
-            {/* Map placeholder */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-50">
-              <ImageWithFallback 
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=2074" 
-                alt="Map of Galway" 
-                fill
+            {/* Google Map iframe */}
+            <div className="absolute inset-0">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d152733.91104627982!2d-9.176466395353846!3d53.28416410118835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b939a04a602fb%3A0x6b8eb7c569a30282!2sGalway%2C%20Ireland!5e0!3m2!1sen!2sus!4v1714578598075!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={false} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
               />
-            </div>
-            <div className="absolute inset-0 bg-brand-900/40"></div>
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="text-center">
-                <MapPin className="w-8 h-8 text-accent-orange mx-auto mb-2 drop-shadow-md" />
-                <span className="font-bold text-white drop-shadow-md bg-brand-900/80 px-3 py-1 rounded-full text-sm">Roscam, Galway Base</span>
-              </div>
             </div>
           </div>
         </div>

@@ -35,27 +35,27 @@ export default function PricingBanner() {
             </div>
           </div>
           <div className="bg-white text-brand-900 rounded-2xl p-8 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 bg-accent-orange text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
-              NO SURPRISES
+            <div className="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-4 py-1 rounded-bl-lg">
+              GUARANTEED QUALITY
             </div>
             <div className="flex items-center gap-4 mb-6">
-              <div className="bg-red-50 text-red-500 p-3 rounded-xl">
+              <div className="bg-green-50 text-green-600 p-3 rounded-xl">
                 <ShieldAlert className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold">The &quot;Cowboy&quot; Guarantee</h3>
+              <h3 className="text-2xl font-bold">Our Quality Promise</h3>
             </div>
             <p className="text-slate-600 mb-6">
-              Tired of tradesmen who don&apos;t show up or change the price halfway through the job? 
+              We know it's hard to find a reliable plumber. That's why we built our entire business around trust, punctuality, and workmanship you can count on.
             </p>
             <ul className="space-y-3 font-medium text-slate-800">
               <li className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" /> We show up when we say we will.
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" /> 20+ Years Experience & Fully Insured.
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" /> RGI & OFTEC Registered Installers.
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" /> We protect your home and clean up after.
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" /> We stand over all our work 100%.
               </li>
             </ul>
           </div>
