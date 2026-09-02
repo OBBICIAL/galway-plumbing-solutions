@@ -13,15 +13,15 @@ export default function Hero() {
   return (
     <section className="relative bg-slate-950 text-white overflow-hidden py-16 lg:py-24">
       {/* Background Image with Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-brand-900">
         <Image 
-          src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&q=80&w=2069" 
+          src="/hero_bg.jpg" 
           alt="Plumbing Background"
           fill
           priority
-          className="object-cover opacity-20 object-center"
+          className="object-cover opacity-40 md:opacity-50 object-center mix-blend-luminosity"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-brand-900/90 via-brand-900/70 to-brand-900/10"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
