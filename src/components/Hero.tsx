@@ -49,7 +49,7 @@ export default function Hero() {
               className="bg-accent-orange hover:bg-orange-500 text-white text-lg font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(249,115,22,0.3)] transition-all hover:scale-105 active:scale-95"
             >
               <Phone className="w-6 h-6 animate-pulse" />
-              Call Tom Now (085 172 0646)
+              Call Tom Now
             </a>
             <button 
               onClick={scrollToBooking}
