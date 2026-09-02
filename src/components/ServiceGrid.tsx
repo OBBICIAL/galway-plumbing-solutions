@@ -23,11 +23,11 @@ export default function ServiceGrid() {
     ],
     heating: [
       { title: "Oil Boiler Servicing", icon: Flame, desc: "Annual diagnostics, tuning, and repairs.", img: "/portfolio_boiler.jpg" },
-      { title: "Heat Pump Maintenance", icon: Wind, desc: "Air-to-Water & Geothermal system servicing.", img: "/boiler_after.jpg" },
+      { title: "Heat Pump Maintenance", icon: Wind, desc: "Air-to-Water & Geothermal system servicing.", img: "/service_heatpump.jpg" },
       { title: "Underfloor Heating", icon: Flame, desc: "Balancing, manifold repairs, and flushing.", img: "/portfolio_underfloor.jpg" },
-      { title: "Power Flushing", icon: Droplets, desc: "Clean your heating system for maximum efficiency.", img: "/service_pump.jpg" },
-      { title: "Radiator Replacements", icon: Flame, desc: "Upgrade to high-output modern radiators.", img: "/bathroom_after.jpg" },
-      { title: "Solid Fuel Stoves", icon: Flame, desc: "Safe installation and plumbing connection.", img: "/boiler_before.jpg" },
+      { title: "Power Flushing", icon: Droplets, desc: "Clean your heating system for maximum efficiency.", img: "/service_flush.jpg" },
+      { title: "Radiator Replacements", icon: Flame, desc: "Upgrade to high-output modern radiators.", img: "/service_radiator.jpg" },
+      { title: "Solid Fuel Stoves", icon: Flame, desc: "Safe installation and plumbing connection.", img: "/service_stove.jpg" },
     ]
   };
 
