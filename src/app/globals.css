@@ -7,6 +7,21 @@
   --color-accent-cyan: #06B6D4;
   --color-accent-orange: #F97316;
   --font-sans: var(--font-inter);
+  
+  --animate-breathe: breathe 3s ease-in-out infinite;
+  --animate-neon-ping: neon-ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+  }
+  
+  @keyframes neon-ping {
+    75%, 100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
 }
 
 @layer base {
