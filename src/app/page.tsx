@@ -6,7 +6,6 @@ import SocialProof from "@/components/SocialProof";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import MobileBottomBar from "@/components/MobileBottomBar";
 import EmergencyModal from "@/components/EmergencyModal";
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
         <SocialProof />
       </main>
       <Footer />
-      <MobileBottomBar />
       <EmergencyModal />
     </>
   );
